@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myCalcProj';
+  title = 'myCalculator';
+  toShow = "0";
+  currValue= '';
+  
+  
+  
+  writeToInput(value: string) {
+    this.currValue = this.currValue + value;
+    this.toShow = this.currValue;
+  }
+
+  eqauls() {
+    
+  }
 }
