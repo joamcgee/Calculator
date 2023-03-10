@@ -8,7 +8,7 @@
 <body>
   <div style="display: flex; height: 750px; justify-content: center; align-items: center">
   <div class="calc-frame">
-    <input [(ngModel)] = "toShow" type="text">
+    <input  #box (keyup.enter) = "calcValue(box.value)" [(ngModel)]= "toShow" type="text">
     <div class="all-btn">
       <div class="all-btn-numbers">
         <button (click)="writeToInput('1')">1</button>
@@ -22,8 +22,8 @@
         <button (click)="writeToInput('9')">9</button>
         <button (click)="writeToInput('0')">0</button>
         <div class="btn-extra">
-          <button>.</button>
-          <button>back</button>
+          <button (click)="writeToInput('.')">.</button>
+          <button (click)="back()">back</button>
         </div>
       </div>
       <div class="all-btn-signs">
@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="btn-clear-equals">
-      <button id="clear" >C</button>
+      <button id="clear" (click)="clear()">C</button>
       <button id="equals" (click)="eqauls()">=</button>
     </div>  
   </div>
